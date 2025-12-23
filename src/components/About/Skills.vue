@@ -43,12 +43,11 @@ export default {
 <template>
   <div class="flex flex-col gap-10 items-center px-4 sm:px-8 lg:px-20 mt-10">
     <h1
-      class="text-neutral-600 text-2xl sm:text-3xl md:text-4xl font-extrabold"
+      class="text-neutral-600 dark:text-neutral-300 text-2xl sm:text-3xl md:text-4xl font-extrabold"
     >
       TOOL & STACK
     </h1>
 
-    <!-- Responsive grid -->
     <div
       class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-y-14 gap-x-10 place-items-center"
     >
@@ -57,22 +56,18 @@ export default {
         :key="i"
         class="relative flex justify-center"
       >
-        <!-- Skill name -->
         <div
-          class="absolute px-4 py-1 text-sm sm:text-base bg-neutral-400 rounded-lg transform transition-all duration-500 ease-in-out opacity-0"
-          @mouseover="toggleHover(i, true)"
-          @mouseleave="toggleHover(i, false)"
-          :class="{ 'translate-y-9 opacity-100': skill.isHovered }"
+          class="absolute px-4 py-1 text-sm sm:text-base bg-neutral-400 dark:bg-amber-400 text-white dark:text-black rounded-lg transform transition-all duration-500 ease-in-out opacity-0"
+          :class="{ 'translate-y-9 opacity-100 z-30': skill.isHovered }"
         >
           {{ skill.language }}
         </div>
 
-        <!-- Skill image -->
         <div
-          class="p-2 sm:p-3 rounded-xl bg-neutral-300 transform transition-all duration-500 ease-in-out"
           @mouseover="toggleHover(i, true)"
           @mouseleave="toggleHover(i, false)"
-          :class="{ '-translate-y-8': skill.isHovered }"
+          class="p-2 sm:p-3 rounded-xl bg-neutral-300 dark:bg-neutral-800 transform transition-all duration-500 ease-in-out"
+          :class="{ '-translate-y-8 shadow-xl': skill.isHovered }"
         >
           <img
             :src="skill.image"

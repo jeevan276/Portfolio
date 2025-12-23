@@ -26,11 +26,23 @@ export default {
     };
   },
   mounted() {
+    // Check localStorage OR system preference
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+
+    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
       this.isDarkMode = true;
       document.documentElement.classList.add("dark");
+    } else {
+      this.isDarkMode = false;
+      document.documentElement.classList.remove("dark");
     }
+
+    // Set active page based on current route on refresh
+    const path = this.$route.path.replace("/", "") || "home";
+    this.activePage = path;
   },
   methods: {
     showSection(section) {
@@ -39,10 +51,11 @@ export default {
     toggleTheme() {
       this.isDarkMode = !this.isDarkMode;
       if (this.isDarkMode) {
-        document.documentElement.classList.add("dark");
+        // Instead of classList, we set the dataset attribute
+        document.documentElement.setAttribute("data-theme", "dark");
         localStorage.setItem("theme", "dark");
       } else {
-        document.documentElement.classList.remove("dark");
+        document.documentElement.setAttribute("data-theme", "light");
         localStorage.setItem("theme", "light");
       }
     },
@@ -56,10 +69,10 @@ export default {
   >
     <button
       @click="toggleTheme"
-      class="p-3 rounded-full bg-neutral-200 dark:bg-neutral-800 text-neutral-600 dark:text-yellow-400 shadow-md flex items-center justify-center transition-colors"
+      class="p-3 rounded-full bg-neutral-200 dark:bg-neutral-800 text-neutral-600 dark:text-yellow-400 shadow-md flex items-center justify-center transition-all duration-500 hover:rotate-90 active:scale-90"
     >
-      <Sun v-if="!isDarkMode" size="20" />
-      <Moon v-else size="20" />
+      <Moon v-if="!isDarkMode" size="20" />
+      <Sun v-else size="20" />
     </button>
 
     <nav class="flex flex-col gap-5">
@@ -115,15 +128,15 @@ export default {
     <div class="flex justify-end pr-6 mb-4">
       <button
         @click="toggleTheme"
-        class="p-3 rounded-full bg-neutral-200 dark:bg-neutral-800 text-neutral-600 dark:text-yellow-400 shadow-lg"
+        class="p-3 rounded-full bg-neutral-200 dark:bg-neutral-800 text-neutral-600 dark:text-yellow-400 shadow-lg transition-all active:scale-90"
       >
-        <Sun v-if="!isDarkMode" size="20" />
-        <Moon v-else size="20" />
+        <Moon v-if="!isDarkMode" size="20" />
+        <Sun v-else size="20" />
       </button>
     </div>
 
     <nav
-      class="flex justify-around bg-white dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800 px-4 py-3 w-full"
+      class="flex justify-around bg-white dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800 px-4 py-3 w-full transition-colors duration-300"
     >
       <RouterLink
         v-for="link in [
@@ -136,7 +149,7 @@ export default {
         :key="link.id"
         :to="link.path"
         @click="showSection(link.id)"
-        class="size-11 rounded-full flex items-center justify-center transition-colors"
+        class="size-11 rounded-full flex items-center justify-center transition-all duration-300"
         :class="
           activePage === link.id
             ? 'bg-yellow-400 text-white'

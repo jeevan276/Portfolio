@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+/* 1. Tell Tailwind v4 to look for the .dark class */
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+:root {
+  --bg-main: 255 255 255;
+  --text-body: 82 82 82;
+}
+
+/* 2. Change [data-theme="dark"] to .dark */
+.dark {
+  --bg-main: 10 10 10;
+  --text-body: 212 212 212;
+}
+
+body {
+  background-color: rgb(var(--bg-main));
+  color: rgb(var(--text-body));
+}

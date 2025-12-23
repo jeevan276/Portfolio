@@ -27,15 +27,17 @@ export default {
 };
 </script>
 <template>
-  <div class="pt-12 p-6 md:p-10 lg:pr-20 xl:pr-50 space-y-10 md:space-y-15">
+  <div
+    class="pt-12 p-6 md:p-10 lg:pr-20 xl:pr-50 space-y-10 md:space-y-15 min-h-screen bg-white dark:bg-neutral-950 transition-colors duration-500"
+  >
     <div class="relative text-center flex justify-center items-center">
       <h1
-        class="absolute text-5xl sm:text-7xl md:text-8xl text-neutral-300 opacity-50 -z-10 font-bold tracking-widest"
+        class="absolute text-5xl sm:text-7xl md:text-8xl text-neutral-300 dark:text-neutral-800 opacity-40 -z-0 font-bold tracking-widest"
       >
         CONTACT
       </h1>
-      <h1 class="text-3xl md:text-4xl font-extrabold">
-        <span class="text-neutral-600">GET IN </span>
+      <h1 class="text-3xl md:text-4xl font-extrabold z-10">
+        <span class="text-neutral-600 dark:text-neutral-300">GET IN </span>
         <span class="text-amber-400">TOUCH</span>
       </h1>
     </div>
@@ -43,10 +45,12 @@ export default {
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
       <div class="flex flex-col gap-6">
         <div class="space-y-3">
-          <h1 class="text-neutral-600 font-bold text-xl uppercase">
+          <h1
+            class="text-neutral-600 dark:text-neutral-200 font-bold text-xl uppercase"
+          >
             Don't be shy !
           </h1>
-          <p class="text-neutral-500 leading-relaxed">
+          <p class="text-neutral-500 dark:text-neutral-400 leading-relaxed">
             Feel free to get in touch with me. I am always open to discussing
             new projects, creative ideas or opportunities to be part of your
             visions.
@@ -59,8 +63,12 @@ export default {
               class="bg-amber-400 text-white size-10 p-2 shrink-0 rounded-xl"
             />
             <div>
-              <h1 class="text-neutral-400 text-sm">ADDRESS POINT</h1>
-              <p class="font-bold text-neutral-600 text-sm sm:text-base">
+              <h1 class="text-neutral-400 dark:text-neutral-500 text-sm">
+                ADDRESS POINT
+              </h1>
+              <p
+                class="font-bold text-neutral-600 dark:text-neutral-300 text-sm sm:text-base"
+              >
                 Sunwal, Nawalparasi, Nepal
               </p>
             </div>
@@ -71,9 +79,11 @@ export default {
               class="bg-amber-400 text-white size-10 p-2 shrink-0 rounded-xl"
             />
             <div>
-              <h1 class="text-neutral-400 text-sm">MAIL ME</h1>
+              <h1 class="text-neutral-400 dark:text-neutral-500 text-sm">
+                MAIL ME
+              </h1>
               <a
-                class="font-bold text-neutral-600 break-all"
+                class="font-bold text-neutral-600 dark:text-neutral-300 break-all hover:text-amber-400 transition-colors"
                 href="mailto:digitaljeevan6@gmail.com"
               >
                 digitaljeevan6@gmail.com
@@ -86,8 +96,12 @@ export default {
               class="bg-amber-400 text-white size-10 p-2 shrink-0 rounded-xl"
             />
             <div>
-              <h1 class="text-neutral-400 text-sm">CALL ME</h1>
-              <p class="font-bold text-neutral-600">9800000000</p>
+              <h1 class="text-neutral-400 dark:text-neutral-500 text-sm">
+                CALL ME
+              </h1>
+              <p class="font-bold text-neutral-600 dark:text-neutral-300">
+                9800000000
+              </p>
             </div>
           </div>
         </div>
@@ -97,11 +111,11 @@ export default {
             v-for="(icon, index) in socialLinks"
             :key="index"
             :href="icon.url"
-            class="flex justify-center items-center size-10 rounded-full bg-neutral-200 hover:bg-amber-400 transition-all duration-300 group"
+            class="flex justify-center items-center size-10 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-amber-400 dark:hover:bg-amber-400 transition-all duration-300 group"
           >
             <component
               :is="icon.component"
-              class="size-5 text-neutral-600 group-hover:text-white"
+              class="size-5 text-neutral-600 dark:text-neutral-300 group-hover:text-white"
             />
           </a>
         </div>
@@ -113,13 +127,13 @@ export default {
             type="text"
             name="name"
             placeholder="Your Name"
-            class="outline-none w-full h-12 px-4 border border-neutral-300 rounded-3xl focus:border-amber-400 transition-colors"
+            class="outline-none w-full h-12 px-4 border border-neutral-300 dark:border-neutral-700 bg-transparent dark:text-white rounded-3xl focus:border-amber-400 transition-colors placeholder-neutral-400"
           />
           <input
             type="email"
             name="email"
             placeholder="Your Email"
-            class="outline-none w-full h-12 px-4 border border-neutral-300 rounded-3xl focus:border-amber-400 transition-colors"
+            class="outline-none w-full h-12 px-4 border border-neutral-300 dark:border-neutral-700 bg-transparent dark:text-white rounded-3xl focus:border-amber-400 transition-colors placeholder-neutral-400"
           />
         </div>
 
@@ -128,7 +142,7 @@ export default {
             type="text"
             name="subject"
             placeholder="Your Subject"
-            class="outline-none w-full h-12 px-4 border border-neutral-300 rounded-3xl focus:border-amber-400 transition-colors"
+            class="outline-none w-full h-12 px-4 border border-neutral-300 dark:border-neutral-700 bg-transparent dark:text-white rounded-3xl focus:border-amber-400 transition-colors placeholder-neutral-400"
           />
         </div>
 
@@ -137,17 +151,17 @@ export default {
             name="message"
             placeholder="Your Message"
             rows="5"
-            class="outline-none w-full px-4 py-3 border border-neutral-300 rounded-3xl focus:border-amber-400 transition-colors"
+            class="outline-none w-full px-4 py-3 border border-neutral-300 dark:border-neutral-700 bg-transparent dark:text-white rounded-3xl focus:border-amber-400 transition-colors placeholder-neutral-400"
           ></textarea>
         </div>
 
         <div class="pt-2">
           <button
             type="submit"
-            class="relative group flex items-center gap-3 px-6 pr-16 py-3 border border-amber-400 rounded-full cursor-pointer overflow-hidden w-max"
+            class="relative group flex items-center gap-3 px-6 pr-16 py-3 border border-amber-400 rounded-full cursor-pointer overflow-hidden w-max bg-transparent"
           >
             <span
-              class="group-hover:text-white font-bold text-neutral-600 z-10 transition-colors duration-300"
+              class="group-hover:text-white font-bold text-neutral-600 dark:text-neutral-300 z-10 transition-colors duration-300"
             >
               SEND MESSAGE
             </span>
