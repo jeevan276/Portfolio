@@ -24,7 +24,7 @@ export default {
 </script>
 
 <template>
-  <div class="p-10 md:p-20 flex flex-col justify-center gap-10 lg:gap-16">
+  <div class="flex flex-col justify-center gap-10 lg:gap-16">
     <!-- Heading -->
     <div class="relative text-center flex justify-center items-center">
       <h1

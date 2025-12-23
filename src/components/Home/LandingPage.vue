@@ -12,7 +12,9 @@ export default {
 </script>
 
 <template>
-  <div class="relative min-h-screen overflow-hidden bg-white/90 lg:pb-20">
+  <div
+    class="relative min-h-screen flex justify-center items-center overflow-hidden bg-white/90 lg:pb-20"
+  >
     <!-- Yellow diagonal background -->
     <div
       class="absolute top-0 -left-60 sm:-left-80 w-[120%] h-[40%] sm:w-[100%] sm:h-[60%] lg:w-[60%] lg:h-[300%] lg:bg-yellow-400 -rotate-12 origin-left"

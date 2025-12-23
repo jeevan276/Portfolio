@@ -7,7 +7,11 @@ export default {
   },
 };
 </script>
+
 <template>
-  <RouterView />
+  <div :class="{ 'pb-20': $route.path !== '/' }" class="lg:pb-0">
+    <RouterView />
+  </div>
+
   <NavBar />
 </template>

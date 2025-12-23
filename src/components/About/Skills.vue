@@ -41,7 +41,7 @@ export default {
 </script>
 
 <template>
-  <div class="flex flex-col gap-10 items-center px-4 sm:px-8 lg:px-20">
+  <div class="flex flex-col gap-10 items-center px-4 sm:px-8 lg:px-20 mt-10">
     <h1
       class="text-neutral-600 text-2xl sm:text-3xl md:text-4xl font-extrabold"
     >

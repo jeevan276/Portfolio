@@ -10,6 +10,8 @@ export default {
 };
 </script>
 <template>
-  <PersonalInfos />
-  <Skills />
+  <div class="pt-20 px-10 lg:pr-30 py-10">
+    <PersonalInfos />
+    <Skills />
+  </div>
 </template>
