@@ -15,6 +15,11 @@ export default {
       ],
     };
   },
+  methods: {
+    downloadCV() {
+      window.open("/CV.pdf", "_blank");
+    },
+  },
 };
 </script>
 
@@ -83,7 +88,7 @@ export default {
         <div class="mt-10">
           <button
             class="relative group flex items-center gap-3 px-4 pr-14 py-2 border border-yellow-300 rounded-full cursor-pointer overflow-hidden"
-            @click="$router.push('/')"
+            @click="downloadCV()"
           >
             <span
               class="group-hover:text-white font-bold text-neutral-600 z-10"

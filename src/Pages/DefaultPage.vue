@@ -13,3 +13,4 @@ export default {
   </div>
   <NavBar />
 </template>
+<div class="min-h-screen"></div>

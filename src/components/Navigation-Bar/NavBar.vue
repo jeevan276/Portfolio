@@ -5,6 +5,8 @@ import {
   MailOpen,
   MessageSquare,
   User,
+  Sun,
+  Moon,
 } from "lucide-vue-next";
 
 export default {
@@ -14,188 +16,134 @@ export default {
     Briefcase,
     MailOpen,
     MessageSquare,
+    Sun,
+    Moon,
   },
   data() {
     return {
       activePage: "home",
+      isDarkMode: false,
     };
+  },
+  mounted() {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      this.isDarkMode = true;
+      document.documentElement.classList.add("dark");
+    }
   },
   methods: {
     showSection(section) {
       this.activePage = section;
     },
+    toggleTheme() {
+      this.isDarkMode = !this.isDarkMode;
+      if (this.isDarkMode) {
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+      }
+    },
   },
 };
 </script>
+
 <template>
-  <!-- for desktop view -->
   <div
-    class="hidden fixed right-10 top-1/2 transform -translate-y-1/2 lg:flex flex-col gap-5"
+    class="hidden fixed right-10 top-1/2 transform -translate-y-1/2 lg:flex flex-col gap-5 z-50"
   >
+    <button
+      @click="toggleTheme"
+      class="p-3 rounded-full bg-neutral-200 dark:bg-neutral-800 text-neutral-600 dark:text-yellow-400 shadow-md flex items-center justify-center transition-colors"
+    >
+      <Sun v-if="!isDarkMode" size="20" />
+      <Moon v-else size="20" />
+    </button>
+
     <nav class="flex flex-col gap-5">
-      <div class="relative group inline-block">
-        <!-- Icon -->
+      <div
+        v-for="link in [
+          { id: 'home', path: '/', icon: 'Home', label: 'Home' },
+          { id: 'about', path: '/about', icon: 'User', label: 'About' },
+          {
+            id: 'works',
+            path: '/works',
+            icon: 'Briefcase',
+            label: 'Portfolio',
+          },
+          {
+            id: 'contact',
+            path: '/contact',
+            icon: 'MailOpen',
+            label: 'Contact',
+          },
+          {
+            id: 'blogs',
+            path: '/blogs',
+            icon: 'MessageSquare',
+            label: 'Blogs',
+          },
+        ]"
+        :key="link.id"
+        class="relative group inline-block"
+      >
         <RouterLink
-          to="/"
-          @click.native="showSection('home')"
-          class="size-12 bg-neutral-200 rounded-full text-neutral-600 flex items-center justify-center group-hover:bg-yellow-300 group-hover:text-white"
-          :class="activePage === 'home' ? 'bg-yellow-300 text-white' : ''"
+          :to="link.path"
+          @click="showSection(link.id)"
+          class="size-12 rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-yellow-400 group-hover:text-white"
+          :class="
+            activePage === link.id
+              ? 'bg-yellow-400 text-white'
+              : 'bg-neutral-200 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400'
+          "
         >
-          <Home />
+          <component :is="link.icon" size="20" />
         </RouterLink>
 
-        <!-- Hover label -->
         <div
-          class="absolute right-10 top-1/2 -translate-y-1/2 translate-x-10 px-7 pr-15 py-3 bg-yellow-300 text-white rounded-full opacity-0 pointer-events-none transition-all duration-300 group-hover:translate-x-10 group-hover:opacity-100 group-hover:pointer-events-auto hover:opacity-100 hover:pointer-events-auto hover:translate-x-10 -z-10"
+          class="absolute right-14 top-1/2 -translate-y-1/2 px-4 py-2 bg-yellow-400 text-white text-sm font-medium rounded-lg opacity-0 pointer-events-none transition-all duration-300 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0"
         >
-          Home
-        </div>
-      </div>
-
-      <div class="relative group inline-block">
-        <!-- Icon -->
-        <RouterLink
-          to="/about"
-          @click.native="showSection('about')"
-          class="size-12 bg-neutral-200 rounded-full text-neutral-600 flex items-center justify-center group-hover:bg-yellow-300 group-hover:text-white"
-          :class="activePage === 'about' ? 'bg-yellow-300 text-white' : ''"
-        >
-          <User />
-        </RouterLink>
-
-        <!-- Hover label -->
-        <div
-          class="absolute right-10 top-1/2 -translate-y-1/2 translate-x-10 px-7 pr-15 py-3 bg-yellow-300 text-white rounded-full opacity-0 pointer-events-none transition-all duration-300 group-hover:translate-x-10 group-hover:opacity-100 group-hover:pointer-events-auto hover:opacity-100 hover:pointer-events-auto hover:translate-x-10 -z-10"
-        >
-          About
-        </div>
-      </div>
-
-      <div class="relative group inline-block">
-        <!-- Icon -->
-        <RouterLink
-          to="/works"
-          @click.native="showSection('works')"
-          class="size-12 bg-neutral-200 rounded-full text-neutral-600 flex items-center justify-center group-hover:bg-yellow-300 group-hover:text-white"
-          :class="activePage === 'works' ? 'bg-yellow-300 text-white' : ''"
-        >
-          <Briefcase />
-        </RouterLink>
-
-        <!-- Hover label -->
-        <div
-          class="absolute right-10 top-1/2 -translate-y-1/2 translate-x-10 px-7 pr-15 py-3 bg-yellow-300 text-white rounded-full opacity-0 pointer-events-none transition-all duration-300 group-hover:translate-x-10 group-hover:opacity-100 group-hover:pointer-events-auto hover:opacity-100 hover:pointer-events-auto hover:translate-x-10 -z-10"
-        >
-          Portfolio
-        </div>
-      </div>
-
-      <div class="relative group inline-block">
-        <!-- Icon -->
-        <RouterLink
-          to="/contact"
-          @click.native="showSection('contact')"
-          class="size-12 bg-neutral-200 rounded-full text-neutral-600 flex items-center justify-center group-hover:bg-yellow-300 group-hover:text-white"
-          :class="activePage === 'contact' ? 'bg-yellow-300 text-white' : ''"
-        >
-          <MailOpen />
-        </RouterLink>
-
-        <!-- Hover label -->
-        <div
-          class="absolute right-10 top-1/2 -translate-y-1/2 translate-x-10 px-7 pr-15 py-3 bg-yellow-300 text-white rounded-full opacity-0 pointer-events-none transition-all duration-300 group-hover:translate-x-10 group-hover:opacity-100 group-hover:pointer-events-auto hover:opacity-100 hover:pointer-events-auto hover:translate-x-10 -z-10"
-        >
-          Contact
-        </div>
-      </div>
-
-      <div class="relative group inline-block">
-        <!-- Icon -->
-        <RouterLink
-          to="/blogs"
-          @click.native="showSection('blogs')"
-          class="size-12 bg-neutral-200 rounded-full text-neutral-600 flex items-center justify-center group-hover:bg-yellow-300 group-hover:text-white"
-          :class="activePage === 'blogs' ? 'bg-yellow-300 text-white' : ''"
-        >
-          <MessageSquare />
-        </RouterLink>
-
-        <!-- Hover label -->
-        <div
-          class="absolute right-10 top-1/2 -translate-y-1/2 translate-x-10 px-7 pr-15 py-3 bg-yellow-300 text-white rounded-full opacity-0 pointer-events-none transition-all duration-300 group-hover:translate-x-10 group-hover:opacity-100 group-hover:pointer-events-auto hover:opacity-100 hover:pointer-events-auto hover:translate-x-10 -z-10"
-        >
-          Blogs
+          {{ link.label }}
         </div>
       </div>
     </nav>
   </div>
 
-  <!--For Mobile View -->
   <div class="fixed bottom-0 left-0 w-full lg:hidden z-50">
-    <nav class="flex justify-around bg-white px-6 py-3 w-full shadow-t-2xl">
-      <RouterLink
-        to="/"
-        @click.native="showSection('home')"
-        class="size-12 rounded-full flex items-center justify-center"
-        :class="
-          activePage === 'home'
-            ? 'bg-yellow-300 text-white'
-            : 'bg-neutral-200 text-neutral-600'
-        "
+    <div class="flex justify-end pr-6 mb-4">
+      <button
+        @click="toggleTheme"
+        class="p-3 rounded-full bg-neutral-200 dark:bg-neutral-800 text-neutral-600 dark:text-yellow-400 shadow-lg"
       >
-        <Home />
-      </RouterLink>
+        <Sun v-if="!isDarkMode" size="20" />
+        <Moon v-else size="20" />
+      </button>
+    </div>
 
+    <nav
+      class="flex justify-around bg-white dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800 px-4 py-3 w-full"
+    >
       <RouterLink
-        to="/about"
-        @click.native="showSection('about')"
-        class="size-12 rounded-full flex items-center justify-center"
+        v-for="link in [
+          { id: 'home', path: '/', icon: 'Home' },
+          { id: 'about', path: '/about', icon: 'User' },
+          { id: 'works', path: '/works', icon: 'Briefcase' },
+          { id: 'contact', path: '/contact', icon: 'MailOpen' },
+          { id: 'blogs', path: '/blogs', icon: 'MessageSquare' },
+        ]"
+        :key="link.id"
+        :to="link.path"
+        @click="showSection(link.id)"
+        class="size-11 rounded-full flex items-center justify-center transition-colors"
         :class="
-          activePage === 'about'
-            ? 'bg-yellow-300 text-white'
-            : 'bg-neutral-200 text-neutral-600'
+          activePage === link.id
+            ? 'bg-yellow-400 text-white'
+            : 'bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400'
         "
       >
-        <User />
-      </RouterLink>
-
-      <RouterLink
-        to="/works"
-        @click.native="showSection('works')"
-        class="size-12 rounded-full flex items-center justify-center"
-        :class="
-          activePage === 'works'
-            ? 'bg-yellow-300 text-white'
-            : 'bg-neutral-200 text-neutral-600'
-        "
-      >
-        <Briefcase />
-      </RouterLink>
-
-      <RouterLink
-        to="/contact"
-        @click.native="showSection('contact')"
-        class="size-12 rounded-full flex items-center justify-center"
-        :class="
-          activePage === 'contact'
-            ? 'bg-yellow-300 text-white'
-            : 'bg-neutral-200 text-neutral-600'
-        "
-      >
-        <MailOpen />
-      </RouterLink>
-
-      <RouterLink
-        to="/blogs"
-        @click.native="showSection('blogs')"
-        class="size-12 rounded-full flex items-center justify-center"
-        :class="
-          activePage === 'blogs'
-            ? 'bg-yellow-300 text-white'
-            : 'bg-neutral-200 text-neutral-600'
-        "
-      >
-        <MessageSquare />
+        <component :is="link.icon" size="20" />
       </RouterLink>
     </nav>
   </div>
