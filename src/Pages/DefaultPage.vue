@@ -8,9 +8,6 @@ export default {
 };
 </script>
 <template>
-  <div class="pb-25 lg:pb-10">
-    <RouterView />
-  </div>
+  <RouterView />
   <NavBar />
 </template>
-<div class="min-h-screen"></div>
