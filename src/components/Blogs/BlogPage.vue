@@ -14,7 +14,7 @@ export default {
   <div
     class="pt-20 px-10 lg:pr-30 py-10 min-h-screen bg-white dark:bg-neutral-950 transition-colors duration-500"
   >
-    <div class="relative text-center flex justify-center items-center mb-10">
+    <div class="relative text-center flex justify-center items-center">
       <h1
         class="absolute text-5xl sm:text-7xl md:text-8xl text-neutral-300 dark:text-neutral-800 opacity-40 -z-0 font-bold tracking-widest"
       >

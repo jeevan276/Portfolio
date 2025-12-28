@@ -20,46 +20,21 @@ export default {
       selectedCard: null, // This starts as null
       cardData: [
         {
-          image: "/portfolioImg.webp",
-          projectName: "E-Business Project",
-          project: "website",
-          client: "a",
+          image: "/images/nepalipool.png",
+          projectName: "NepaliPool",
+          project: "Mentorship Platform",
+          client: "NepaliPool",
           language: "HTML,CSS,JS,VUE",
-          previewLink: "https://jeevankami.com.np",
+          previewLink: "https://www.nepalipool.com/",
         },
 
         {
-          image: "/portfolioImg.webp",
-          projectName: "E-Business Project",
-          project: "website",
-          client: "a",
+          image: "/images/haatMaKanun.png",
+          projectName: "Haat Ma Kanun",
+          project: "Legal Assistance Platform",
+          client: "Hackathon",
           language: "HTML,CSS,JS,VUE",
-          previewLink: "https://jeevankami.com.np",
-        },
-
-        {
-          image: "/portfolioImg.webp",
-          projectName: "E-Business Project",
-          project: "website",
-          client: "a",
-          language: "HTML,CSS,JS,VUE",
-          previewLink: "https://jeevankami.com.np",
-        },
-        {
-          image: "/portfolioImg.webp",
-          projectName: "E-Business Project",
-          project: "website",
-          client: "a",
-          language: "HTML,CSS,JS,VUE",
-          previewLink: "https://jeevankami.com.np",
-        },
-        {
-          image: "/portfolioImg.webp",
-          projectName: "E-Business Project",
-          project: "website",
-          client: "a",
-          language: "HTML,CSS,JS,VUE",
-          previewLink: "https://jeevankami.com.np",
+          previewLink: "https://haatmakanun.vercel.app/",
         },
       ],
     };

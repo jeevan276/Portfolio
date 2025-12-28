@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     downloadCV() {
-      window.open("/Jeevan Kami Resume.pdf", "_blank");
+      window.open("/JeevanKamiResume.pdf", "_blank");
     },
   },
 };
