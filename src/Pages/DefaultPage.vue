@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-  <div :class="{ 'pb-20 ': $route.path !== '/' }" class="lg:pb-0">
+  <div :class="{ 'pb-15 ': $route.path !== '/' }" class="lg:pb-0">
     <RouterView />
   </div>
 

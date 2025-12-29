@@ -66,11 +66,18 @@ export default {
               <h1 class="text-neutral-400 dark:text-neutral-500 text-sm">
                 ADDRESS POINT
               </h1>
-              <p
-                class="font-bold text-neutral-600 dark:text-neutral-300 text-sm sm:text-base"
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Sunwal,+Nawalparasi,+Nepal"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cursor-pointer hover:underline"
               >
-                Sunwal, Nawalparasi, Nepal
-              </p>
+                <p
+                  class="font-bold text-neutral-600 dark:text-neutral-300 text-sm sm:text-base break-all hover:text-amber-400 transition-colors"
+                >
+                  Sunwal, Nawalparasi, Nepal
+                </p>
+              </a>
             </div>
           </div>
 
@@ -99,9 +106,16 @@ export default {
               <h1 class="text-neutral-400 dark:text-neutral-500 text-sm">
                 CALL ME
               </h1>
-              <p class="font-bold text-neutral-600 dark:text-neutral-300">
-                9800000000
-              </p>
+              <a
+                href="tel:+977 9817487614"
+                class="cursor-pointer hover:underline"
+              >
+                <p
+                  class="font-bold text-neutral-600 dark:text-neutral-300 break-all hover:text-amber-400 transition-colors"
+                >
+                  +977 9817487614
+                </p>
+              </a>
             </div>
           </div>
         </div>

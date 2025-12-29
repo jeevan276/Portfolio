@@ -125,10 +125,10 @@ export default {
   </div>
 
   <div class="fixed bottom-0 left-0 w-full lg:hidden z-50">
-    <div class="flex justify-end pr-6 mb-4">
+    <div class="relative flex justify-end pr-6">
       <button
         @click="toggleTheme"
-        class="p-3 rounded-full bg-neutral-200 dark:bg-neutral-800 text-neutral-600 dark:text-yellow-400 shadow-lg transition-all active:scale-90"
+        class="absolute -top-15 p-3 rounded-full bg-neutral-200 dark:bg-neutral-800 text-neutral-600 dark:text-yellow-400 shadow-lg transition-all active:scale-90"
       >
         <Moon v-if="!isDarkMode" size="20" />
         <Sun v-else size="20" />
