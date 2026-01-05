@@ -13,7 +13,7 @@ export default {
 
 <template>
   <div
-    class="relative min-h-screen flex justify-center items-center overflow-hidden bg-white/90 dark:bg-neutral-950 lg:pb-20 transition-colors duration-500"
+    class="relative min-h-screen flex justify-center items-center overflow-hidden bg-white/90 dark:bg-neutral-950 md:pb-30 lg:pb-20 transition-colors duration-500"
   >
     <div
       class="absolute top-0 sm:-left-80 w-[120%] h-[40%] sm:w-full sm:h-[60%] lg:w-[60%] lg:h-[400%] lg:bg-yellow-400 -rotate-12 origin-left"

@@ -20,7 +20,7 @@ export default {
 <template>
   <div
     v-if="isVisible && post"
-    class="fixed inset-0 bg-black/80 backdrop-blur-sm flex justify-center items-center z-50 p-4 md:p-10"
+    class="fixed inset-0 bg-black/80 backdrop-blur-sm flex justify-center items-center z-50 pb-20 p-4 md:p-10"
     @click.self="$emit('close')"
   >
     <div

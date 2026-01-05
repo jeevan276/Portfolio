@@ -9,6 +9,7 @@ import {
   Send,
   Youtube,
 } from "lucide-vue-next";
+import SocialLinks from "./SocialLinks.vue";
 
 export default {
   components: {
@@ -20,6 +21,7 @@ export default {
     Instagram,
     Linkedin,
     Send,
+    SocialLinks,
   },
   data() {
     return {};
@@ -189,5 +191,7 @@ export default {
         </div>
       </form>
     </div>
+
+    <SocialLinks />
   </div>
 </template>
