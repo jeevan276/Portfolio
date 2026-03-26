@@ -18,25 +18,32 @@ export default {
   data() {
     return {
       selectedCard: null, // This starts as null
-      cardData: [
-        {
-          image: "/images/nepalipool.png",
-          projectName: "NepaliPool",
-          project: "Mentorship Platform",
-          client: "NepaliPool",
-          language: "HTML,CSS,JS,VUE",
-          previewLink: "https://www.nepalipool.com/",
-        },
-
-        {
-          image: "/images/haatMaKanun.png",
-          projectName: "Haat Ma Kanun",
-          project: "Legal Assistance Platform",
-          client: "Hackathon",
-          language: "HTML,CSS,JS,VUE",
-          previewLink: "https://haatmakanun.vercel.app/",
-        },
-      ],
+cardData: [
+  {
+    image: "/images/nepalipool.png",
+    projectName: "NepaliPool",
+    project: "Mentorship & Overseas Education Platform",
+    client: "NepaliPool",
+    language: "Next.js, Tailwind CSS, Lucide React, JS", 
+    previewLink: "https://www.nepalipool.com/",
+  },
+  {
+    image: "/images/haatMaKanun.png",
+    projectName: "Haat Ma Kanun",
+    project: "Legal Awareness & Q&A Platform",
+    client: "Hackathon Project",
+    language: "React.js, Tailwind CSS, Framer Motion, JS",
+    previewLink: "https://haatmakanun.vercel.app/",
+  },
+  {
+    image: "/images/vdopool.png",
+    projectName: "VdoPool",
+    project: "Video-Based Learning & Support Hub",
+    client: "Personal Project",
+    language: "React.js, Tailwind CSS, Vite, JS",
+    previewLink: "https://bcapass.vercel.app/",
+  },
+],
     };
   },
 };

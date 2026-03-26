@@ -10,6 +10,23 @@ export default {
   data() {
     return {
       CardDetails: [
+              {
+  img: "/images/vdopool.png",
+  title: "VdoPool: Ending the Endless YouTube Search",
+  author: "Digital Jeevan",
+  date: "25 Mar 2026",
+  tags: "productivity, content curation, vdo pool, learning paths",
+  contents: {
+    firstParagraph:
+      "Searching for specific information on YouTube often feels like looking for a needle in a haystack. While the content is out there, users frequently waste hours filtering through irrelevant videos, clickbait titles, and repetitive introductions. VdoPool was built to solve this exact problem by allowing creators to curate and organize high-quality video content into structured, meaningful sequences.",
+    secondParagraph:
+      "The core of VdoPool lies in its intuitive drag-and-drop interface. Creators can effortlessly arrange videos in the exact order a viewer needs to see them, creating a seamless learning path. This eliminates the 'search fatigue' that many students and professionals face, ensuring that every video in the sequence serves a direct purpose and contributes to the overall goal of the project or lesson.",
+    thirdParagraph:
+      "For the viewer, VdoPool acts as a time-saving filter. Instead of jumping between different channels and trying to piece together a solution from fragmented tutorials, they find a single, expert-verified source. By providing a 'no-distraction' environment, the platform helps users focus entirely on the topic at hand, significantly increasing the efficiency of digital learning and skill acquisition.",
+    fourthParagraph:
+      "Ultimately, the goal is to shift the digital landscape from 'searching' to 'learning.' By empowering creators to build these organized video pools, we are making the internet a more productive place. VdoPool isn't just another video site; it’s a tool for precision learning that respects the viewer's time and provides a direct roadmap to success without the clutter of traditional social media algorithms.",
+  },
+},
         {
           img: "/images/time.webp",
           title: "Mastering Time Management for Productivity",

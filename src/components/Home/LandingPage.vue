@@ -26,7 +26,7 @@ export default {
         class="relative flex w-36 h-36 sm:w-52 sm:h-52 md:w-64 md:h-64 lg:absolute lg:w-96 lg:h-96 mt-10 lg:mt-5 rounded-full lg:rounded-2xl shadow-xl lg:shadow-2xl"
       >
         <img
-          src="/profileJK1.png"
+          src="/public/images/jk.jpg"
           alt="profile"
           class="w-full h-full object-cover rounded-full lg:rounded-2xl border-4 border-white dark:border-neutral-800"
         />

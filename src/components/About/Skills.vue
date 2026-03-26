@@ -3,20 +3,21 @@ export default {
   data() {
     return {
       Skills: [
-        { image: "/images/html.png", language: "HTML", isHovered: false },
-        { image: "/images/css.png", language: "CSS", isHovered: false },
-        {
-          image: "/images/javascript.png",
-          language: "JavaScript",
-          isHovered: false,
-        },
+        { image: "/images/react.png", language: "React.js", isHovered: false },
+        { image: "/favicon.ico", language: "Vue.js", isHovered: false },
+        
         {
           image: "/images/tailwind.webp",
           language: "Tailwind",
           isHovered: false,
         },
-        { image: "/favicon.ico", language: "Vue.js", isHovered: false },
-
+        {
+          image: "/images/javascript.png",
+          language: "JavaScript",
+          isHovered: false,
+        },
+        { image: "/images/css.png", language: "CSS", isHovered: false },
+        { image: "/images/html.png", language: "HTML", isHovered: false },
         { image: "/images/vercel.webp", language: "Vercel", isHovered: false },
         {
           image: "/images/git.webp",
